@@ -1,38 +1,233 @@
-.App {
+:root{
+  --primary: #00c3ff;
+  --primary-light: #47d3fe;
+  --dark: #393b3b;
+  --linear-gradient: --linear-gradient(to right, var(--primary), var(--primary-light));
+  --box-shadow: 0 0 5px rgba(0, 0, 0, 0.2)
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body{
+  background: #f5f3f3;
+}
+
+button{
+  border: 0;
+  outline: 0;
+  padding: 0.7rem;
+  border-radius: 5px;
+  font-size: 17px;
+  cursor: pointer;
+}
+
+.delete{
+  background: #ff005d;
+  color: white;
+  margin: 0 1rem;
+  transition: .3s ease;
+}
+
+.btn{
+  border: 0;
+  outline: 0;
+  border-radius: 5px;
+  background: var(--primary);
+  color: white;
+  padding: 0.5rem 1rem;
+  transition: .3s;
+  cursor: pointer;
+  text-decoration: none;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.btn:active, button:active{
+  transform: scale(1.1);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.container{
+  width: 80%;
+  margin: 0 auto;
+  height: 100vh;
+  overflow-x: hidden;
+  display: grid;
+  grid-template-columns: 30% auto;
+  gap: 2rem;
+  padding: 2rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.buttons{
+  width: 100%;
   display: flex;
   flex-direction: column;
+  gap: 1rem;
+}
+
+.SideBar{
+  background: white;
+  border-radius: 10px;
+  box-shadow: var(--box-shadow);
+  height: 100%;
+  padding: 2rem 1rem;
+}
+
+.students_count{
+  font-size: 5rem;
+  color: var(--primary);
+  text-align: center;
+}
+
+.SideBar h2{
+  text-align: center;
+  font-size: 1.5rem;
+  margin: 3rem 0 1rem 0;
+}
+
+.students_container{
+  padding-right: 1rem;
+  width: 100%;
+  height: 90vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.student_card{
+  height: 15rem;
+  background: white;
+  border-radius: 10px;
+  box-shadow: var(--box-shadow);
+  padding: 1rem;
+  transition: .3s ease;
+}
+
+.student_card:hover{
+  box-shadow: none;
+}
+
+.student_card img{
+  width: 50%;
+  height: 50%;
+  border-radius: 50%;
+}
+
+.student_card .Name{
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.missing{
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-direction: column;
 }
 
-.App-link {
-  color: #61dafb;
+.missing h1{
+  font-size: 3rem;
+  margin-bottom: 2rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.link{
+  text-decoration: none;
+  /* color: var(--primary); */
+  color: var(--dark);
+  font-size: 1.2rem;
+}
+
+.student_page{
+  height: 90vh;
+  overflow-y: scroll;
+}
+
+.student_page .student img{
+  width: 10rem;
+  height: 10rem;
+}
+
+.student_page .student .Name{
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.student_page .student .course{
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+.student_page .student .school{
+  font-size: 1.3rem;
+}
+
+.student_page .student .top{
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.student_page .student .bio{
+  margin: 2rem 0;
+}
+
+.student .bio p{
+  word-spacing: 2px;
+  font-size: 20px;
+  line-height: 1.6rem;
+}
+
+.student .tag{
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+.new_student form{
+  width: 100%;
+  padding: 1rem 0;
+}
+
+.new_student form label{
+  margin-bottom: 5px;
+}
+
+form input[type='text']{
+  width: 70%;
+  height: 3rem;
+  margin-bottom: 1rem;
+  padding: 0 1rem;
+}
+form input#profile{
+  width: 70%;
+  height: 3rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background: white;
+}
+
+form input{
+  border-radius: 5px;
+  border: 1px solid gray;
+  outline-color: var(--primary);
+}
+
+textarea{
+  width: 70%;
+  height: 10rem;
+  padding: 1rem;
+  border-radius: 5px;
+   border: 1px solid grey;
+  outline-color: var(--primary);
+}
+
+form button{
+  margin-top: 1rem;
 }
