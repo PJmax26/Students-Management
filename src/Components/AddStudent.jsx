@@ -6,7 +6,7 @@ function AddStudent({
         <div className="new_student">
             <h1>Add New Student</h1>
 
-            <form onSubmit={hundleSubmit}>
+            <form onSubmit={hundleSubmit} id="addStudent">
                 <label htmlFor="profile">Profile Picture</label>
                 <br />
                 <input type="file"

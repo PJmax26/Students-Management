@@ -16,8 +16,8 @@ function StudentPage({ students, hundleDelete }) {
                             <img src={student.profile} alt="" />
                             <div className="text">
                                 <h1 className="Name">{student.name}</h1>
-                                <p className="course">{student.course}</p>
-                                <p className="school">{student.school}</p>
+                                <p className="course">Course: {student.course}</p>
+                                <p className="school">Institution: {student.school}</p>
                             </div>
                         </div>
 
