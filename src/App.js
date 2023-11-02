@@ -25,10 +25,10 @@ function App() {
     const searchedItems = students.filter(student => student.name.toLowerCase().includes(search.toLowerCase()) || student.course.toLowerCase().includes(search.toLowerCase()) || student.school.toLowerCase().includes(search.toLowerCase()) || student.bio.toLowerCase().includes(search.toLowerCase()))
 
     setResults(searchedItems)
-
+    
   }, [students, search])
 
-  // const history = useHistory()
+  // const history = useHistory() 
 
   const setAndSaveItems = (newItems) => {
     setStudents(newItems)
